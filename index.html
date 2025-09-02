@@ -4,15 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Form</title>
 </head>
-<body>
-   <h1> Form </h1> 
-   <label for="UserName">username:</label><input type="text" id="UserName" required>
-   <label for="LastNamme">lastname</label><input type="text" id="LastNamme" required>
+<body class=" bg-neutral-200 flex items-center min-h-screen">
+
+    <div class="flex items-center w-200 h-150 bg-lime-50 ml-140 gap-2 rounded-xl">
+
+        <div class="img relative">
+            <img src="./picture/img1.jpg" class="rounded-xl w-250 h-149"/>
+             <div class="absolute inset-0 flex items-center justify-center">
+             <p class="text-white text-5xl  font-bold font-sans"> Create your<br> Account</p>
+           </div>
+    </div>
+
+        <div class="container-form">
+    <form id="Form"  >
+   <h1> Sign Up </h1> 
+   <label for="UserName">username:</label><input type="text" id="UserName"  required>
+   <label for="LastName">lastname</label><input type="text" id="LastName" required>
    <label for="PhoneNumber">phone number:</label><input type="text" id="PhoneNumber" required>
    <label for="Age">Age:</label><input type="text" id="Age" required>
-   <button id="Submit">Submit</button>
+   <input type="submit" id="InSubmit" placeholder="Submit">
+   </form>
+   </div>
+   </div>
+
    <script src="index.js"></script>
 </body>
 </html>
