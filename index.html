@@ -9,22 +9,40 @@
 </head>
 <body class=" bg-neutral-200 flex items-center  justify-center min-h-screen">
 
-    <div class="flex items-center w-200 h-140 bg-lime-50 overflow-hidden gap-2 rounded-xl">    
+    <div class=" flex items-center w-200 h-140 bg-lime-50 overflow-hidden gap-2 rounded-xl shadow-xl">    
 
-        <div class="img relative">
-            <img src="./picture/img 3.jpg" class="rounded-xl w-250 h-120 ml-5"/>
+        <div class="img relative flex items-center">
+            <img src="./picture/img 3.jpg" class="rounded-xl w-130 h-120 ml-5"/>
         </div>
 
-        <div class="container-form">
-    <form id="Form"  >
-   <h1> Sign Up </h1> 
-   <label for="UserName">username:</label><input type="text" id="UserName"  required>
-   <label for="LastName">lastname</label><input type="text" id="LastName" required>
-   <label for="PhoneNumber">phone number:</label><input type="text" id="PhoneNumber" required>
-   <label for="Age">Age:</label><input type="text" id="Age" required>
-   <input type="submit" id="InSubmit" placeholder="Submit">
+    <form id="Form" class="container-form p-6 space-y-4 mb-5" >
+      <div class="p-2 text-center">
+       <h1 class="text-2xl font-bold"> Create an Account</h1>
+       <p class="text-md font-sm text-gray-900">Meet, chat, and study with students from all over the world🌎</p>
+      </div>
+      <!--فیلد نام کوچک-->
+    <div >
+     <label for="UserName" class="block text-md font-medium text-gray-900 mb-2">username :</label>
+     <input type="text" placeholder="Enter your Name" id="UserName" class="w-90 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition duration-200" required>
+      </div>
+        <!--فیلد نام خانوادگی-->
+      <div>
+     <label for="LastName" class="block text-md font-medium  text-gray-900 mb-2">lastname :</label>
+     <input type="text" id="LastName" placeholder="Enter your LastName" class="w-90 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition duration-200" required>
+     </div>
+     <!--فیلد شماره تلفن-->
+     <div>
+     <label for="PhoneNumber" class="block text-md font-medium  text-gray-900 mb-2">phone number :</label>
+     <input type="text" id="PhoneNumber"  placeholder="Enter your phone number" class="w-90 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition duration-200" required>
+     </div>
+     <!--فیلد سن -->
+     <div>
+     <label for="Age" class="block text-md font-medium  text-gray-900 mb-2" >Age :</label>
+     <input type="text" id="Age"  placeholder="Enter your Age" class="w-90 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition duration-200" required>
+     </div>
+     <input type="submit" id="InSubmit" placeholder="Sign Up" class="w-90 bg-amber-800  shadow-indigo-500/50 hover:bg-amber-900 text-white font-medium font-bold py-2 px-4 rounded-lg transition duration-200 focus:ring-4 focus:ring-blue-300 focus:outline-none">
+  
    </form>
-   </div>
    </div>
 
    <script src="index.js"></script>
