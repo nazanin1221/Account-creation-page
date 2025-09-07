@@ -7,43 +7,112 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Form</title>
 </head>
-<body class="  bg[#fbfbfb] flex items-center  justify-center min-h-screen gap-x-8 gap-y-4">
 
-    
+<body class="  bg[#fbfbfb]  min-h-screen gap-x-8 gap-y-4">
 
+    <!-- Navbar-->
+<nav class="relative bg-white shadow-md"> <!-- تغییر اصلی -->
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="relative flex h-16 items-center justify-between">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <!-- Mobile menu button-->
+        <button type="button" command="--toggle" commandfor="mobile-menu" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
+          <span class="absolute -inset-0.5"></span>
+          <span class="sr-only">Open main menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 in-aria-expanded:hidden">
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
+            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex shrink-0 items-center">
+          <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" class="h-8 w-auto" />
+        </div>
+        <div class="hidden sm:ml-6 sm:block">
+          <div class="flex space-x-4">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
+            <a href="#" aria-current="page" class="rounded-md bg-gray-100 px-3 py-2 text-sm font-medium text-gray-900">Dashboard</a>
+            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900">Team</a>
+            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900">Projects</a>
+            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900">Calendar</a>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <button type="button" class="relative rounded-full p-1 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500">
+          <span class="absolute -inset-1.5"></span>
+          <span class="sr-only">View notifications</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+            <path d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <!-- Profile dropdown -->
+         <button class="ml-3 rounded-md bg-indigo-500 px-3 py-2 text-sm font-bold text-white hover:bg-indigo-700">
+                  Study Together
+         </button>
+    </div>
+
+          <el-menu anchor="bottom end" popover class="w-48 origin-top-right rounded-md bg-white py-1 shadow-lg outline outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">Your profile</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">Settings</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">Sign out</a>
+          </el-menu>
+        </el-dropdown>
+      </div>
+    </div>
+  </div>
+
+  <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
+    <div class="space-y-1 px-2 pt-2 pb-3">
+      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
+      <a href="#" aria-current="page" class="block rounded-md bg-gray-100 px-3 py-2 text-base font-medium text-gray-900">Dashboard</a>
+      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900">Team</a>
+      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900">Projects</a>
+      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900">Calendar</a>
+    </div>
+  </el-disclosure>
+</nav>
+
+<!--CONTAINER-->
+    <div class="flex items-center  justify-center gap-x-8 gap-y-4 mt-10">
         <div class="img relative flex items-center">
             <img src="./picture/img 3.jpg" class="rounded-r-xl rounded-b-xl w-130 h-120 ml-5 shadow-lg"/>
         </div>
 
+        
     <form id="Form" class="container-form p-6 space-y-4 mb-5" >
       <div class="text-center">
        <h1 class="text-2xl font-bold mb-2"> Create an Account</h1>
        <p class="text-md font-sm text-gray-900">Meet, chat, and study with students from all over the world🌎</p>
       </div>
       <!--فیلد نام کوچک-->
-    <div >
-     <label for="UserName" class="block text-md font-medium text-gray-500 mb-2">username</label>
+    <div class="ml-10">
+     <label for="UserName" class="block text-md font-medium text-gray-500 mb-2 ">username</label>
      <input type="text" placeholder="Your Name" id="UserName" class="w-90 px-4 py-2 border border-gray-300  focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition duration-200" required>
       </div>
         <!--فیلد نام خانوادگی-->
-      <div>
+      <div  class="ml-10">
      <label for="LastName" class="block text-md font-medium  text-gray-500 mb-2">lastname</label>
      <input type="text" id="LastName" placeholder="your LastName" class="w-90 px-4 py-2 border border-gray-300  focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition duration-200" required>
      </div>
      <!--فیلد شماره تلفن-->
-     <div>
+     <div  class="ml-10">
      <label for="PhoneNumber" class="block text-md font-medium  text-gray-500 mb-2">Phone</label>
      <input type="text" id="PhoneNumber"  placeholder="Enter your number required" class="w-90 px-4 py-2 border border-gray-300  focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition duration-200" required>
      </div>
      <!--فیلد سن -->
-     <div>
+     <div  class="ml-10">
      <label for="Age" class="block text-md font-medium  text-gray-500 mb-2" >Age</label>
      <input type="text" id="Age"  placeholder="Enter your Age" class="w-90 px-4 py-2 border border-gray-300  focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition duration-200" required>
      </div>
-     <input type="submit" id="InSubmit" placeholder="Study Together now" class="w-90 bg-amber-800  shadow-indigo-500/50 hover:bg-amber-900 text-white font-medium font-bold py-2 px-4 rounded-lg transition duration-200 focus:ring-4 focus:ring-blue-300 focus:outline-none">
+     <input type="submit" id="InSubmit" placeholder="Study Together now" class="w-90  ml-10 bg-amber-800  shadow-indigo-500/50 hover:bg-amber-900 text-white font-medium font-bold py-2 px-4 rounded-lg transition duration-200 focus:ring-4 focus:ring-blue-300 focus:outline-none">
   
    </form>
- 
+ </div>
 
    <script src="index.js"></script>
 </body>
