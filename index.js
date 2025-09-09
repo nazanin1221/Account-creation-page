@@ -8,7 +8,7 @@ Form.addEventListener("submit", function (e) {
 
     for (const child of formm) {
         const item = document.querySelector(child)
-        ArrayForm.push(item.value);
+        ArrayForm.push(item.value.trim());
 
     }
 
